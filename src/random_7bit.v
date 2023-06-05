@@ -1,0 +1,30 @@
+module random_7bit(
+    input clk,
+    input rst_n,
+    output reg[6:0] rand_num
+    );
+//reg [3:0] rand_buff = 4'd0;
+//----------------------初始化-------------------------------------------------------------
+initial begin
+	rand_num = 7'b0100000;
+end
+//----------------------初始化-------------------------------------------------------------
+always@(posedge clk or negedge rst_n)
+   if(!rst_n)  begin
+			rand_num <= 7'b0100000;
+//			rand_buff <= 4'd0;
+	end
+   else begin 
+//				rand_buff <= rand_num % 10; 
+//				rand_num <= (rand_num  >> rand_buff ? rand_num ;
+            rand_num[0] <= rand_num[1];
+            rand_num[1] <= rand_num[3];
+            rand_num[2] <= rand_num[6];
+            rand_num[3] <= rand_num[4];
+            rand_num[4] <= rand_num[2];
+            rand_num[5] <= rand_num[0];
+            rand_num[6] <= rand_num[5];
+   end
+endmodule
+
+
