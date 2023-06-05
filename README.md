@@ -1,5 +1,5 @@
 # GreedySnake_base_on_LEDArray
-/*Many projects are based on VGA or other peripheral, so owing to my hand-by FPGA device and 5*7 LED arrays, I improve the algorithm of it, so u can easily use it for many parts*/
+/*Many projects are based on VGA or other peripheral, so owing to my hand-by FPGA device and 5\*7 LED arrays, I improve the algorithm of it, so u can easily use it for many parts*/
 /************************************************************************************************************************************************/
 主要的思想是利用LED动态刷新的方法，当然这也是基于网上一些优秀的博主VGA的方式的一种改良，只适配LED点阵的情况，如果有需要的小伙伴，也可以参考一下我的代码思想。
 我的代码思想是这样的：1）Dynamic显示：每次将采集到的蛇的动态位置放到一个35\*11的点阵中,然后用一个很快的速率读取前7或5位数据，这里的35为我的LED的数目，11为我设置的蛇身长度，7为行数据，5为列数据；
